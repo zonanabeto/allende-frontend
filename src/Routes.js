@@ -1,9 +1,9 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import {HomePage} from "./components/HomePage";
+import HomeContainer from "./components/HomePage/HomeContainer";
 
 export const Routes = () => (
   <Switch>
-    <Route exact path='/' component={HomePage} />
+    <Route exact path='/' component={HomeContainer} />
   </Switch>
 );
