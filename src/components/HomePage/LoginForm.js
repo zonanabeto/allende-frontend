@@ -38,7 +38,7 @@ class LoginForm extends React.Component{
           <div style={{maxWidth: '300px', paddingBottom: '20px'}}>
             <img alt="logo-allende" src={logo} width="50%" />
           </div>
-          <Form onSubmit={this.handleSubmit} className="login-form" style={{ maxWidth: '300px', height: '30vh'}}>
+          <Form onSubmit={this.handleSubmit} className="login-form" style={{ maxWidth: '300px', height: 'auto'}}>
             <FormItem>
               {getFieldDecorator('email', {
                 rules: [{ required: true, message: 'Debes de indicar un correo electrónico' }],
