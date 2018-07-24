@@ -1,12 +1,59 @@
 import React, { Component } from 'react';
-import background from '../../assets/allende.jpg';
-import LoginForm from "./LoginForm";
+import {LoginForm} from "./LoginForm";
+import './HomeContainer.css';
+import {logIn} from "../../services/authServices";
+import toastr from 'toastr';
 
 class HomeContainer extends Component{
+
+  state = {
+    isLogged: false,
+  };
+
+  componentWillMount() {
+    let user = JSON.parse(localStorage.getItem('user'));
+    if(user){
+      this.setState({isLogged:true});
+      if (user.role === 'admin') {
+        console.log('hay admin');
+        this.props.history.push('/admin')
+      } else if (user.role === 'user') {
+        console.log('hay usuario');
+        this.props.history.push('/user')
+      }
+    } else {
+      this.setState({isLogged:false})
+    }
+  }
+
+  login = (e) => {
+    e.preventDefault();
+    const auth = {
+      email: e.target.email.value,
+      password: e.target.password.value
+    };
+    logIn(auth)
+      .then(r => {
+        let user = r.user;
+        let token = r.access_token;
+        toastr.success(`Bienvenido ${user.role}`); //cambiar por username
+        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('access_token', JSON.stringify(token));
+        if(user.role === 'admin') {
+          this.props.history.push('/admin');
+        } else {
+          this.props.history.push('/user');
+        }
+      })
+      .catch(e => toastr.error('Revisa tu correo y/o contraseña'))
+  };
+
   render(){
+    const {isLogged} = this.state;
+    if(isLogged) toastr.success('Bienvenido');
     return (
-      <div style={{backgroundImage: `url("${background}")`, width: '100%', height: '100vh', backgroundSize: 'cover', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-        <LoginForm history={this.props.history} />
+      <div className="container" >
+        <LoginForm onSubmit={this.login} />
       </div>
     );
   }

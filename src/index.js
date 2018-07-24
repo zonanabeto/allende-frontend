@@ -7,6 +7,7 @@ import {BrowserRouter} from 'react-router-dom'; //router
 import configureStore from "./redux/store/configureStore"; //redux
 import {Provider} from 'react-redux'; //redux
 import 'antd/dist/antd.css';//antd
+import 'toastr/build/toastr.css';
 import { LocaleProvider } from 'antd';
 import sp from 'antd/lib/locale-provider/es_ES';
 
