@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {LoginForm} from "./LoginForm";
-import './HomeContainer.css';
+import './LoginContainer.css';
 import {logIn} from "../../services/authServices";
 import toastr from 'toastr';
 
-class HomeContainer extends Component{
+class LoginContainer extends Component{
 
   state = {
-    isLogged: false,
+    isLogged: false
   };
 
   componentWillMount() {
@@ -45,18 +45,20 @@ class HomeContainer extends Component{
           this.props.history.push('/user');
         }
       })
-      .catch(e => toastr.error('Revisa tu correo y/o contraseña'))
+      .catch(error => {
+        toastr.error('Revisa tu correo y/o contraseña');
+      })
   };
 
   render(){
     const {isLogged} = this.state;
-    if(isLogged) toastr.success('Bienvenido');
+    if(isLogged) toastr.success('Bienvenido de vuelta');
     return (
-      <div className="container" >
+      <div className="container">
         <LoginForm onSubmit={this.login} />
       </div>
     );
   }
 }
 
-export default HomeContainer;
+export default LoginContainer;
