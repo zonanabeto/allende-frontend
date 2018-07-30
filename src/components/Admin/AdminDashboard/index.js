@@ -6,9 +6,9 @@ import DashboardInfo from './DashboardInfo';
 class AdminDashboard extends Component {
   render() {
     return (
-      <div style={{ width:'90%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow:'1', flexDirection: 'column' }}>
+      <div style={{ width:'90%', flexWrap:'wrap', display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow:'1', flexDirection: 'column' }}>
         <ChartContainer />
-        <DashboardInfo/>
+
       </div>
     );
   }
