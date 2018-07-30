@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AdminPanel from "./AdminPanel";
 import AdminRoutes from "./AdminRoutes";
+import { height } from 'window-size';
 
 class AdminContainer extends Component{
 
@@ -16,7 +17,7 @@ class AdminContainer extends Component{
 
   render(){
     return(
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex'}}>
         <AdminPanel />
         <AdminRoutes logOut={this.logOut} />
       </div>
