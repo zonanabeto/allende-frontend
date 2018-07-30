@@ -10,7 +10,7 @@ export const LoginForm = ({onSubmit}) => {
         <div style={{maxWidth: '300px', paddingBottom: '20px'}}>
           <img alt="logo-allende" src={logo} width="50%" />
         </div>
-        <Form onSubmit={onSubmit} className="login-form" style={{ maxWidth: '300px', height: '30vh'}}>
+        <Form onSubmit={onSubmit} className="login-form" style={{ maxWidth: '300px', height: 'auto'}}>
           <FormItem>
             <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Correo Electrónico" name="email" />
           </FormItem>
@@ -18,7 +18,7 @@ export const LoginForm = ({onSubmit}) => {
             <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Contraseña" name="password" />
           </FormItem>
           <FormItem>
-            <Button type="primary" htmlType="submit" className="login-form-button" style={{width: '100%', marginTop: '30px'}}>Ingresar</Button>
+            <Button type="primary" htmlType="submit" className="login-form-button" style={{width: '100%', marginTop: '20px'}}>Ingresar</Button>
           </FormItem>
         </Form>
       </Card>

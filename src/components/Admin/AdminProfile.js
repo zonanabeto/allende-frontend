@@ -3,6 +3,8 @@ import {Button, Avatar} from 'antd';
 import {Link} from 'react-router-dom';
 import photo from '../../assets/logo.png';
 
+
+
 export const AdminProfile = () => {
   const logOut = () => {
     localStorage.removeItem('user');
