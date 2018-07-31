@@ -74,6 +74,7 @@ export class ListaPedidos extends React.Component {
                   description={item.email}
                 />
                 <div>
+                  <span>Fecha:23/07/18 | Status : Entregado | </span>
                   <Button>Editar</Button> <span> | </span>
                   <Button>Eliminar</Button> 
                 </div>

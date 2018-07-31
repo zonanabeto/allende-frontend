@@ -7,7 +7,7 @@ class AdminPedidos extends Component {
   render() {
     return (
       <div style={{ flexWrap:'wrap', display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow:'1', flexDirection: 'column' }}>
-      <Card title="Lista de Pedidos" style={{margin:'20px', width: '80%' }}>
+      <Card title="Lista de Pedidos" style={{margin:'20px', height:'80%', width: '80%' }}>
         <ListaPedidos/>
       </Card>
       </div>
