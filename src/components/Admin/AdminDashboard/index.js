@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import ChartContainer from './ChartContainer';
-import DashboardInfo from './DashboardInfo';
-
 
 class AdminDashboard extends Component {
   render() {

@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {Menu, Icon} from 'antd';
 import {Link} from 'react-router-dom';
 import logo from '../../assets/logoallende.png';
-
-
+const { SubMenu } = Menu;
 
 class AdminPanel extends Component{
 
@@ -43,15 +42,25 @@ class AdminPanel extends Component{
                 </div>
               </Link>
             </Menu.Item>
-            <Menu.Item  key="4">
-              <Link to="/admin/profile">
-                <div className='menuItem'>
-                  <Icon type="appstore" />
-                  <span>Productos</span>
-                </div>
-              </Link>
-            </Menu.Item>
-            <Menu.Item  key="5">
+            <SubMenu key="sub1" title={<span><Icon type="appstore" /><span>Productos</span></span>}>
+              <Menu.Item key="4">
+                <Link to="/admin/products" >
+                  <div className='menuItem'>
+                    <Icon type='inbox' />
+                    <span>Todos</span>
+                  </div>
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="5">
+                <Link to="/admin/promos" >
+                  <div className='menuItem'>
+                    <Icon type="inbox" />
+                    <span>Promociones</span>
+                  </div>
+                </Link>
+              </Menu.Item>
+            </SubMenu>
+            <Menu.Item  key="6">
               <Link to="/admin/profile">
                 <div className='menuItem'>
                   <Icon type="user" />
@@ -59,7 +68,7 @@ class AdminPanel extends Component{
                 </div>
               </Link>
             </Menu.Item>
-            <Menu.Item onClick={this.logOut} key="6">
+            <Menu.Item onClick={this.logOut} key="7">
               <Link to="/">
                 <div className='menuItem'>
                   <Icon type="poweroff" />
