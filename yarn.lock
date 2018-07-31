@@ -4124,10 +4124,13 @@ jest@20.0.4:
   dependencies:
     jest-cli "^20.0.4"
 
+<<<<<<< HEAD
 jquery@>=1.12.0:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
+=======
+>>>>>>> a77a03a4ac9354df88125879a2c898cd2f915948
 js-base64@^2.1.9:
   version "2.4.6"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.6.tgz#1d49f618bef43630cd191f4e122447acfdb947d8"
@@ -6116,6 +6119,15 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
+<<<<<<< HEAD
+=======
+react-infinite-scroller@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-infinite-scroller/-/react-infinite-scroller-1.2.0.tgz#ea89906c5bc918dce486880b59e88847518aa538"
+  dependencies:
+    prop-types "^15.5.8"
+
+>>>>>>> a77a03a4ac9354df88125879a2c898cd2f915948
 react-lazy-load@^3.0.12:
   version "3.0.13"
   resolved "https://registry.yarnpkg.com/react-lazy-load/-/react-lazy-load-3.0.13.tgz#3b0a92d336d43d3f0d73cbe6f35b17050b08b824"
@@ -6473,6 +6485,13 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
 
+<<<<<<< HEAD
+=======
+reqwest@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/reqwest/-/reqwest-2.0.5.tgz#00fb15ac4918c419ca82b43f24c78882e66039a1"
+
+>>>>>>> a77a03a4ac9354df88125879a2c898cd2f915948
 resize-observer-polyfill@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.0.tgz#660ff1d9712a2382baa2cad450a4716209f9ca69"
@@ -7232,12 +7251,15 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
+<<<<<<< HEAD
 toastr@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/toastr/-/toastr-2.1.4.tgz#8b43be64fb9d0c414871446f2db8e8ca4e95f181"
   dependencies:
     jquery ">=1.12.0"
 
+=======
+>>>>>>> a77a03a4ac9354df88125879a2c898cd2f915948
 toposort@^1.0.0:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/toposort/-/toposort-1.0.7.tgz#2e68442d9f64ec720b8cc89e6443ac6caa950029"
