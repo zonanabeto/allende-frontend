@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ChartContainer from './ChartContainer';
 
 
-
 class AdminDashboard extends Component {
   render() {
     return (
