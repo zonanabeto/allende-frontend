@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import AdminPanel from "./AdminPanel";
 import AdminRoutes from "./AdminRoutes";
-import { height } from 'window-size';
+
 
 class AdminContainer extends Component{
 

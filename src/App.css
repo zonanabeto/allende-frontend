@@ -45,3 +45,31 @@
   width: 100%;
   text-align: center;
 }
+
+.lista-proveedores {
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  overflow: auto;
+  padding: 8px 24px;
+  height: 300px;
+}
+.lista-proveedores-loading {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.lista-pedidos {
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  overflow: auto;
+  padding: 8px 24px;
+  height: 300px;
+}
+.lista-pedidos-loading {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}

@@ -20,7 +20,7 @@ class AdminPanel extends Component{
               <img src={logo} alt="allende" width="70%" />
             </div>
             <Menu.Item  key="1">
-              <Link to="/admin/dashboard">
+              <Link to="/admin">
                 <div className='menuItem'>
                   <Icon type="dashboard" />
                   <span>Dashboard</span>

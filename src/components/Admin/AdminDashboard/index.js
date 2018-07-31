@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ChartContainer from './ChartContainer';
-import DashboardInfo from './DashboardInfo';
+
 
 
 class AdminDashboard extends Component {
@@ -8,7 +8,6 @@ class AdminDashboard extends Component {
     return (
       <div style={{ width:'90%', flexWrap:'wrap', display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow:'1', flexDirection: 'column' }}>
         <ChartContainer />
-
       </div>
     );
   }
