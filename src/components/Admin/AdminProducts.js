@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, Button, Modal, Input} from 'antd';
+import toastr from 'toastr';
 const {Meta} = Card;
 
 class AdminProducts extends React.Component{
@@ -10,11 +11,6 @@ class AdminProducts extends React.Component{
     },
     visible: false,
     products: [
-      {
-        name: 'Golden Ale',
-        price: '$36.00',
-        image: 'http://cerveceriaallende.mx/wp-content/uploads/2016/02/GoldenAleFinal2.png'
-      },
       {
         name: 'BROWN ALE',
         price: '$36.00',
@@ -44,6 +40,7 @@ class AdminProducts extends React.Component{
   handleOk = () => {
     const {products, newProduct} = this.state;
     products.push(newProduct);
+    toastr.success('Nuevo producto creado');
     this.setState({products, visible: false});
   };
 

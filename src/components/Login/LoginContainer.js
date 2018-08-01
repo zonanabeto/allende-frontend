@@ -46,6 +46,7 @@ class LoginContainer extends Component{
         }
       })
       .catch(error => {
+        console.log(error);
         toastr.error('Revisa tu correo y/o contraseña');
       })
   };
