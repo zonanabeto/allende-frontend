@@ -13,7 +13,7 @@ class AdminPanel extends Component{
 
   render(){
     return(
-        <div style={{ width: 200 , height:'100%', textAlign: 'left' }}>
+        <div style={{ width: 200 , height:'100vh', textAlign: 'left' }}>
           <Menu mode="inline" theme="dark" inlineCollapsed={false} defaultSelectedKeys={['1']} style={{ height: '100vh' }}>
             <div style={{ marginTop: '30px', marginBottom: '30px', textAlign: 'center' }}>
               <img src={logo} alt="allende" width="70%" />

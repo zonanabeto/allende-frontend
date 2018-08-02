@@ -15,10 +15,8 @@ class LoginContainer extends Component{
     if(user){
       this.setState({isLogged:true});
       if (user.role === 'admin') {
-        console.log('hay admin');
         this.props.history.push('/admin')
       } else if (user.role === 'user') {
-        console.log('hay usuario');
         this.props.history.push('/user')
       }
     } else {
