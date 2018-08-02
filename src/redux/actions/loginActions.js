@@ -1,7 +1,7 @@
 import * as types from './actionTypes';
 
 //action
-export function logUserSuccess(user){
+function logUserSuccess(user){
   return { type: types.LOGIN_USER, user };
 }
 

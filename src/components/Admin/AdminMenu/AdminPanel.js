@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Menu, Icon} from 'antd';
 import {Link} from 'react-router-dom';
-import logo from '../../assets/logoallende.png';
+import logo from '../../../assets/logoallende.png';
 const { SubMenu } = Menu;
 
 class AdminPanel extends Component{

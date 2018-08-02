@@ -1,50 +1,30 @@
 import React from 'react';
 import { Button, Modal, Icon, Table } from 'antd';
 import toastr from 'toastr';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as productsActions from '../../../redux/actions/productsActions';
 
 class AdminProducts extends React.Component{
 
   state = {
+    products: [],
     visible: false,
     toDelete: {},
-    products: [
-      {
-        id: '1',
-        name: 'Brown Ale',
-        price: '$36.00',
-        stock: '1000'
-      },
-      {
-        id: '2',
-        name: 'Agave Lager',
-        price: '$36.00',
-        stock: '1000'
-      },
-      {
-        id: '3',
-        name: 'IPA',
-        price: '$36.00',
-        stock: '1000'
-      },
-      {
-        id: '4',
-        name: 'Golden Ale',
-        price: '$36.00',
-        stock: '1000'
-      }
-    ],
     columns: [
-      { title: 'ID', dataIndex: 'id', align: 'center' },
-      { title: 'Nombre', dataIndex: 'name', align: 'center' },
-      { title: 'Precio', dataIndex: 'price', align: 'center' },
-      { title: 'Imagen', dataIndex: 'image', align: 'center',
-        render: () => <img src='https://s3.amazonaws.com/kichink/items_865660_246443_20160104113504_b.jpg' alt='imagen' width='10%'/>,
+      { title: 'ID', dataIndex: 'id', align: 'center', width: 150 },
+      { title: 'Nombre', dataIndex: 'name', align: 'center', width: 250 },
+      { title: 'Precio', dataIndex: 'price', align: 'center', width: 100,
+        render: (i) => `$ ${i}`
+      },
+      { title: 'Imagen', dataIndex: 'image', align: 'center', width: 300,
+        render: () => <img src='https://s3.amazonaws.com/kichink/items_865660_246443_20160104113504_b.jpg' alt='imagen' width='10%' />,
       },
       { title: 'Stock', dataIndex: 'stock', align: 'center' },
-      { title: <Icon type="delete" />,
+      { title: 'Borrar',
         dataindex: 'action',
         align: 'center',
-        render: (i, obj) => <a style={{ color: 'red' }} onClick={()=>this.showModal(obj)}>Borrar</a>
+        render: (i, obj) => <a style={{ color: 'red' }} onClick={()=>this.showModal(obj)}> <Icon type="delete" /> </a>
       }
     ],
   };
@@ -67,15 +47,10 @@ class AdminProducts extends React.Component{
     this.setState({products: arr, visible: false});
   };
 
-  handleChange = (e) => {
-    const {newProduct} = this.state;
-    const field = e.target.name;
-    newProduct[field] = e.target.value;
-    this.setState({newProduct});
-  };
-
   render(){
-    const {products, visible, columns} = this.state;
+    console.log(this.props);
+    const {visible, columns} = this.state;
+    const {products} = this.props;
     return(
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow: '1' }}>
         <Modal visible={visible} title="¿Estás seguro de borrar este producto?" onOk={this.handleOk} onCancel={this.handleCancel}
@@ -92,4 +67,16 @@ class AdminProducts extends React.Component{
   }
 }
 
-export default AdminProducts;
+function mapStateToProps(state, ownProps){
+  return {
+    products: state.products
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    actions: bindActionCreators(productsActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminProducts);

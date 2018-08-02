@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {LoginForm} from "./LoginForm";
 import './LoginContainer.css';
 import {logIn} from "../../services/authServices";
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as productsActions from '../../redux/actions/productsActions';
 import toastr from 'toastr';
 
 class LoginContainer extends Component{
@@ -39,6 +42,7 @@ class LoginContainer extends Component{
         localStorage.setItem('access_token', JSON.stringify(token));
         if(user.role === 'admin') {
           this.props.history.push('/admin');
+          this.props.actions.loadProducts(this.state.products)
         } else {
           this.props.history.push('/user');
         }
@@ -47,6 +51,7 @@ class LoginContainer extends Component{
         console.log(error);
         toastr.error('Revisa tu correo y/o contraseña');
       })
+
   };
 
   render(){
@@ -60,4 +65,16 @@ class LoginContainer extends Component{
   }
 }
 
-export default LoginContainer;
+function mapStateToProps(state, ownProps){
+  return {
+    products: state.products
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    actions: bindActionCreators(productsActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);

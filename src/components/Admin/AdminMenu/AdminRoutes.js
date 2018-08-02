@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import { Switch, Route } from 'react-router-dom';
-import {AdminProfile} from "./AdminProfile";
-import AdminDashboard from './AdminDashboard/index';
-import AdminDist from './AdminDist/index';
-import AdminPedidos from './AdminPedidos/index';
+import {AdminProfile} from "../AdminProfile";
+import AdminDashboard from '../AdminDashboard/index';
+import AdminDist from '../AdminDist/index';
+import AdminPedidos from '../AdminPedidos/index';
 
 
-import AdminProducts from "./AdminProducts/AdminProducts";
+import AdminProducts from "../AdminProducts/AdminProducts";
 
 class AdminRoutes extends Component{
   render(){
