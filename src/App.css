@@ -27,23 +27,13 @@
   to { transform: rotate(360deg); }
 }
 
-.menuItem{
-  align-content: space-between;
-  width: 0%;
+.ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+  border-right: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
 }
 
-.demo-infinite-container {
-  border: 1px solid #e8e8e8;
-  border-radius: 4px;
-  overflow: auto;
-  padding: 8px 24px;
-  height: 200px;
-}
-.demo-loading-container {
-  position: absolute;
-  bottom: 40px;
-  width: 100%;
-  text-align: center;
+.ant-list {
+  margin: 30px;
 }
 
 .lista-proveedores {
