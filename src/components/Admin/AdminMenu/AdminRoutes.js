@@ -6,7 +6,7 @@ import AdminDist from './AdminDist/AdminDist';
 import AdminPedidos from './AdminPedidos/AdminPedidos';
 
 
-import AdminProducts from "./AdminProducts";
+import AdminProducts from "../AdminProducts/AdminProducts";
 
 class AdminRoutes extends Component{
   render(){
