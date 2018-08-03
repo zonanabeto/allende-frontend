@@ -73,3 +73,7 @@
   width: 100%;
   text-align: center;
 }
+
+.iconoDist :hover {
+  color: #40a9ff
+}

@@ -1,0 +1,44 @@
+{
+  "user": [
+    { "id": 1,
+      "razonSocial": "json-server sa de cv", 
+      "rfc": "typicode",
+      "user":"admin",
+      "email":"zonanabeto@gmail.com",
+      "phone":"5530366216",
+      "nombreContacto":"Luis Hernandez",
+      "password":"1234567"
+    },
+    {   "id": 2,
+        "razonSocial": "json-server sa de cv", 
+        "rfc": "typicode",
+        "user":"admin",
+        "email":"zonanabeto@gmail.com",
+        "phone":"5530366216",
+        "nombreContacto":"Luis Hernandez",
+        "password":"1234567"
+    },
+    {     "id": 3,
+          "razonSocial": "json-server sa de cv", 
+          "rfc": "typicode",
+          "user":"admin",
+          "email":"zonanabeto@gmail.com",
+          "phone":"5530366216",
+          "nombreContacto":"Luis Hernandez",
+          "password":"1234567"
+    },
+    {       "id": 4,
+            "razonSocial": "json-server sa de cv", 
+            "rfc": "typicode",
+            "user":"admin",
+            "email":"zonanabeto@gmail.com",
+            "phone":"5530366216",
+            "nombreContacto":"Luis Hernandez",
+            "password":"1234567"
+    }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}
