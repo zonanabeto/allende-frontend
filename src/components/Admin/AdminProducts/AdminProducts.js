@@ -7,6 +7,10 @@ import * as productsActions from '../../../redux/actions/productsActions';
 
 class AdminProducts extends React.Component{
 
+  componentWillMount(){
+    console.log(this.context);
+  }
+
   state = {
     products: [],
     visible: false,
