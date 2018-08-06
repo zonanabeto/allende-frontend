@@ -65,16 +65,10 @@ class LoginContainer extends Component{
   }
 }
 
-function mapStateToProps(state, ownProps){
-  return {
-    products: state.products
-  }
-}
-
 function mapDispatchToProps(dispatch){
   return {
     actions: bindActionCreators(productsActions, dispatch)
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);
+export default connect(null, mapDispatchToProps)(LoginContainer);

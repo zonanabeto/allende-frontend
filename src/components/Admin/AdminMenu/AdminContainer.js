@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import AdminPanel from "./AdminPanel";
 import AdminRoutes from "./AdminRoutes";
-import {connect} from 'react-redux';
+/*import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as productsActions from '../../../redux/actions/productsActions';
+import * as productsActions from '../../../redux/actions/productsActions';*/
 
 class AdminContainer extends Component{
 
@@ -28,16 +28,4 @@ class AdminContainer extends Component{
   }
 }
 
-function mapStateToProps(state, ownProps){
-  return {
-    products: state.products
-  }
-}
-
-function mapDispatchToProps(dispatch){
-  return {
-    actions: bindActionCreators(productsActions, dispatch)
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(AdminContainer);
+export default AdminContainer;
