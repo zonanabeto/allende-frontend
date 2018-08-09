@@ -10,9 +10,10 @@ const fakeDataUrl = 'http://localhost:3000/user';
 class AdminDist extends Component {
 
   state = {
-    data: undefined,
+    data: [],
     loading: false,
     hasMore: true,
+    busqueda:''
   }
 
   getData = (callback) => {
@@ -40,7 +41,7 @@ class AdminDist extends Component {
     this.setState({
       loading: true,
     });
-    if (data.length > 14) {
+    if (data.length > 0) {
       message.warning('Infinite List loaded all');
       this.setState({
         hasMore: false,
@@ -57,18 +58,25 @@ class AdminDist extends Component {
     });
   }
 
+  buscar=(informacion)=>{
+    this.setState({busqueda:informacion})
+  }
 
+  
 
   render() {
+    let {data, busqueda} = this.state
+    let regEx = new RegExp(busqueda, 'i')
+    data = data.filter(i=> regEx.exec(i.razonSocial) || regEx.exec(i.nombreContacto))
     return (
       <div style={{ flexWrap:'wrap', display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow:'1', flexDirection: 'column' }}>
       <Card title="Lista de Distribuidores" style={{margin:'20px', width: '80%' }}>
         <div style={{ flexWrap:'wrap', display: 'flex', alignItems: 'center', justifyContent: 'space-around', flexGrow:'1', flexDirection: 'row' }}>
-        <Buscador/>
+        <Buscador busqueda={this.buscar}/>
         <Button type="primary">Añadir Distribuidor</Button>
         </div>
       <br/><br/>
-        <ListaDist state={this.state} handleInfiniteOnLoad={this.handleInfiniteOnLoad}/>
+        <ListaDist {...this.state} lista={data} handleInfiniteOnLoad={this.handleInfiniteOnLoad}/>
       </Card>
       </div>
     );

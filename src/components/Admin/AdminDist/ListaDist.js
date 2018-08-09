@@ -4,8 +4,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 import { showDeleteConfirm } from './DistModals';
 
 
-export const ListaDist = ({handleInfiniteOnLoad,state}) => {
-  const {loading,hasMore,data} = state;
+export const ListaDist = ({handleInfiniteOnLoad, loading,hasMore,data, lista}) => {  
 /* 
     if(this.state.data===undefined)return<Spin size="large" /> */
     return (
@@ -18,7 +17,7 @@ export const ListaDist = ({handleInfiniteOnLoad,state}) => {
           useWindow={false}
         >
           <List
-            dataSource={data}
+            dataSource={lista}
             renderItem={item => (
               <List.Item key={item.id}>
                 <List.Item.Meta
@@ -27,7 +26,7 @@ export const ListaDist = ({handleInfiniteOnLoad,state}) => {
                   description={item.nombreContacto}
                 />
                 <div>   
-                  <Icon  type="edit" /> <span> | </span>
+                  <Icon className='iconDist' type="edit" /> <span> | </span>
                   <Icon onClick={showDeleteConfirm} type="delete" />
                 </div>
               </List.Item>

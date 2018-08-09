@@ -10,7 +10,7 @@ function getProductsSuccess(products){
 export const loadProducts = () => (dispatch) => {
   productServices.getProducts()
     .then(products=>{
-      console.log(products)
+      console.log(products);
       dispatch(getProductsSuccess(products));
     })
     .catch(e => console.log(e))
