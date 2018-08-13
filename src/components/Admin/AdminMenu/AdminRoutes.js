@@ -4,8 +4,8 @@ import {AdminProfile} from "../AdminProfile";
 import AdminDashboard from '../AdminDashboard/index';
 import AdminDist from '../AdminDist/index';
 import AdminPedidos from '../AdminPedidos/index';
-import AdminProducts from "../AdminProducts/AdminProducts";
-import AdminPromos from "../AdminProducts/AdminPromos";
+import AdminProducts from "../AdminProducts/Products/AdminProducts";
+import AdminPromos from "../AdminProducts/Promos/AdminPromos";
 
 class AdminRoutes extends Component{
   render(){

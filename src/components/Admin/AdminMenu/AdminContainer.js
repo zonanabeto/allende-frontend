@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import AdminPanel from "./AdminPanel";
 import AdminRoutes from "./AdminRoutes";
-/*import {connect} from 'react-redux';
+import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as productsActions from '../../../redux/actions/productsActions';*/
+import * as productsActions from '../../../redux/actions/productsActions';
 
 class AdminContainer extends Component{
 
@@ -18,7 +18,7 @@ class AdminContainer extends Component{
   };
 
   render(){
-    console.log('los props', this.props);
+    console.log(this.props);
     return(
       <div style={{ display: 'flex'}}>
         <AdminPanel />
@@ -28,4 +28,16 @@ class AdminContainer extends Component{
   }
 }
 
-export default AdminContainer;
+function mapStateToProps(state, ownProps){
+  return {
+    products: state.products
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    actions: bindActionCreators(productsActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminContainer);
