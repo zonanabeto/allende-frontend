@@ -4,9 +4,8 @@ import {AdminProfile} from "../AdminProfile";
 import AdminDashboard from '../AdminDashboard/index';
 import AdminDist from '../AdminDist/index';
 import AdminPedidos from '../AdminPedidos/index';
-
-
 import AdminProducts from "../AdminProducts/AdminProducts";
+import AdminPromos from "../AdminProducts/AdminPromos";
 
 class AdminRoutes extends Component{
   render(){
@@ -18,6 +17,7 @@ class AdminRoutes extends Component{
         <Route exact path='/admin/pedidos' component={AdminPedidos} />
         <Route exact path='/admin/dashboard' component={AdminDashboard} />
         <Route exact path='/admin/products' component={AdminProducts} />
+        <Route exact path='/admin/promos' component={AdminPromos} />
       </Switch>
     )
   }
