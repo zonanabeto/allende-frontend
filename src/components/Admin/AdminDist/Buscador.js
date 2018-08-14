@@ -1,8 +1,6 @@
 import React from 'react';
 import { Input } from 'antd';
 
-const Search = Input.Search;
-
 const Buscador = ({busqueda}) => {
   return (
     <div>

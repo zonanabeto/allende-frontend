@@ -1,8 +1,9 @@
 //const herokuAPI = "https://stark-fortress-68174.herokuapp.com";
-const localAPI = "http://localhost:3000";
+//const localAPI = "https://allende-frontend.herokuapp.com";
+import {apiUrl} from './apiUrl';
 
-export function logIn(user){
-  return fetch(localAPI + '/login', {
+export const logIn = (user)=>{
+  return fetch(`${apiUrl}/login`, {
     method: 'POST',
     headers: {
       "Content-Type": "application/json"
@@ -11,4 +12,4 @@ export function logIn(user){
   })
     .then(r => r.json())
     .then(user => user);
-}
+};

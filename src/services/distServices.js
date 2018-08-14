@@ -1,7 +1,7 @@
-const localAPI = "http://localhost:3000";
+import {apiUrl} from 'apiUrl';
 
 export function getDists(){
-    return fetch(localAPI + '/distribuidores')
+    return fetch(apiUrl + '/distribuidores')
         .then(r => r.json())
         .catch(dist => dist)
 }

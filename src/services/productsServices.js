@@ -1,7 +1,7 @@
-const localAPI = "http://localhost:3000";
+import {apiUrl} from './apiUrl';
 
 export function getProducts(){
-  return fetch(localAPI + '/products')
+  return fetch(apiUrl + '/products')
     .then(r => r.json())
     .catch(products => products)
 }

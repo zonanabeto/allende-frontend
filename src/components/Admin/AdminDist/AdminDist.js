@@ -3,6 +3,8 @@ import { Card, Button , message } from 'antd';
 import reqwest from 'reqwest';
 import Buscador from './Buscador';
 import {ListaDist} from './ListaDist';
+import {Link} from 'react-router-dom'
+
 
 
 const fakeDataUrl = 'http://localhost:3000/user';
@@ -14,7 +16,7 @@ class AdminDist extends Component {
     loading: false,
     hasMore: true,
     busqueda:''
-  }
+  };
 
   getData = (callback) => {
     reqwest({
@@ -26,7 +28,7 @@ class AdminDist extends Component {
         callback(res);
       },
     });   
-  }
+  };
 
   componentWillMount() {
     this.getData((res) => {
@@ -34,7 +36,7 @@ class AdminDist extends Component {
         data: res,
       });
     });
-  }
+  };
 
   handleInfiniteOnLoad = () => {
     let data = this.state.data;
@@ -56,13 +58,12 @@ class AdminDist extends Component {
         loading: false,
       });
     });
-  }
+  };
 
   buscar=(informacion)=>{
     this.setState({busqueda:informacion})
-  }
+  };
 
-  
 
   render() {
     let {data, busqueda} = this.state
@@ -73,12 +74,14 @@ class AdminDist extends Component {
       <Card title="Lista de Distribuidores" style={{margin:'20px', width: '80%' }}>
         <div style={{ flexWrap:'wrap', display: 'flex', alignItems: 'center', justifyContent: 'space-around', flexGrow:'1', flexDirection: 'row' }}>
         <Buscador busqueda={this.buscar}/>
-        <Button type="primary">Añadir Distribuidor</Button>
+            <Link to={'/admin/dist/new'}>
+              <Button type="primary">Añadir Distribuidor</Button>
+            </Link>
         </div>
       <br/><br/>
         <ListaDist {...this.state} lista={data} handleInfiniteOnLoad={this.handleInfiniteOnLoad}/>
       </Card>
-      </div>
+  </div>
     );
   }
 }

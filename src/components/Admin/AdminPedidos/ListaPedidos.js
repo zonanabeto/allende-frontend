@@ -3,7 +3,6 @@ import { List , Spin, Button } from 'antd';
 import InfiniteScroll from 'react-infinite-scroller';
 
 
-
 export const ListaPedidos = ({state, handleInfiniteOnLoad}) => {
   const {loading,hasMore,data} = state;
     return (
