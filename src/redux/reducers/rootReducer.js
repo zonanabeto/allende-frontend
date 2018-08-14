@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
 import products from './productsReducer';
-import {distribuidores} from './distReducers';
+import distReducers from './distReducers';
 
 const rootReducer = combineReducers({    
   products,
-    distribuidores,
+    distReducers,
 });
 
 export default rootReducer

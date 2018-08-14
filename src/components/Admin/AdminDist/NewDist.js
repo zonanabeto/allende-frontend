@@ -154,7 +154,7 @@ class RegistrationForm extends React.Component {
                     label="Telefono"
                 >
                     {getFieldDecorator('phoneNumber', {
-                        rules: [{type:'number', required: false, message: 'Solo escribir numeros' }],
+                        rules: [{type:'number',  message: 'Solo escribir numeros' }],
                     })(
                         <Input />
                     )}

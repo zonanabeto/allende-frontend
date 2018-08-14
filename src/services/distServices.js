@@ -1,7 +1,7 @@
-import {apiUrl} from 'apiUrl';
+import {apiUrl} from './apiUrl';
 
-export function getDists(){
+export const getDists = () => {
     return fetch(apiUrl + '/distribuidores')
         .then(r => r.json())
         .catch(dist => dist)
-}
+};

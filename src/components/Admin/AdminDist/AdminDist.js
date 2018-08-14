@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Card, Button , message } from 'antd';
 import reqwest from 'reqwest';
+import {connect} from 'react-redux'
 import Buscador from './Buscador';
 import {ListaDist} from './ListaDist';
 import {Link} from 'react-router-dom'
+import {getDists} from "../../../redux/actions/distActions";
 
 
 
@@ -31,11 +33,13 @@ class AdminDist extends Component {
   };
 
   componentWillMount() {
+    this.props.getDists();
     this.getData((res) => {
       this.setState({
         data: res,
       });
     });
+
   };
 
   handleInfiniteOnLoad = () => {
@@ -86,4 +90,4 @@ class AdminDist extends Component {
   }
 }
 
-export default AdminDist;
+export default connect(null,{getDists})(AdminDist);
