@@ -42,7 +42,6 @@ class LoginContainer extends Component{
         localStorage.setItem('access_token', JSON.stringify(token));
         if(user.role === 'admin') {
           this.props.history.push('/admin');
-          this.props.actions.loadProducts(this.state.products)
         } else {
           this.props.history.push('/user');
         }

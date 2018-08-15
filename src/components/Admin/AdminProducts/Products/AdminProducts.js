@@ -51,6 +51,7 @@ class AdminProducts extends React.Component{
   render(){
     const {visible, columns} = this.state;
     const {products} = this.props;
+    console.log(products)
     return(
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow: '1' }}>
         <Card title="Productos" style={{margin:'20px', width: '80%'}}>

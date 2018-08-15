@@ -8,7 +8,7 @@ import * as productsActions from '../../../redux/actions/productsActions';
 class AdminContainer extends Component{
 
   componentWillMount() {
-    if(!localStorage.getItem('user')) this.props.history.push('/');
+    if(!localStorage.getItem('user')) return this.props.history.push('/');
   }
 
   logOut = () => {
@@ -18,7 +18,6 @@ class AdminContainer extends Component{
   };
 
   render(){
-    console.log(this.props);
     return(
       <div style={{ display: 'flex'}}>
         <AdminPanel />
