@@ -1,24 +1,20 @@
 import React, {Component} from 'react';
 import {Card} from 'antd';
-import {getPromos} from "../../../../services/productsServices";
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as promosActions from '../../../../redux/actions/productsActions';
+
 const { Meta } = Card;
 
 class AdminPromos extends Component{
 
-  componentWillMount(){
-    getPromos()
-    .then(promos => {
-      this.setState({promos});
-    })
-    .catch(e => console.log(e))
-  }
 
   state = {
     promos: []
   };
 
   render(){
-    const {promos} = this.state;
+    const {promos} = this.props;
     return(
       <div  style={{ display:'flex', justifyContent:'center', alignItems:'center', width:'90%', flexWrap: 'wrap' }}>
         <Card title='Promociones'>
@@ -38,4 +34,12 @@ class AdminPromos extends Component{
   }
 }
 
-export default AdminPromos;
+const mapStateToProps = (state, ownProps) => ({
+  promos: state.promos
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(promosActions, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminPromos);

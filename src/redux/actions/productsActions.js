@@ -1,18 +1,32 @@
 import * as types from './actionTypes';
 import * as productServices from "../../services/productsServices";
 
-//action
-function getProductsSuccess(products){
-  return {type: types.GET_PRODUCTS, products}
-}
+//actions
+const getProductsSuccess = (products) => ({
+  type: types.GET_PRODUCTS,
+  products
+});
 
-//thunk
+const getPromosSuccess = (promos) => ({
+  type: types.GET_PROMOS,
+  promos
+});
+
+//thunks
 const loadProducts = () => (dispatch) => {
   productServices.getProducts()
-    .then(products=>{
-      dispatch(getProductsSuccess(products));
-    })
-    .catch(e => console.log(e))
+  .then(products => {
+    dispatch(getProductsSuccess(products));
+  })
+  .catch(e => console.log(e))
+};
+
+const loadPromos = () => (dispatch) => {
+  productServices.getPromos()
+  .then(promos => {
+    dispatch(getPromosSuccess(promos));
+  })
+  .catch(e => console.log(e))
 };
 
 export const checkUser = () => (dispatch) => {
@@ -21,6 +35,7 @@ export const checkUser = () => (dispatch) => {
   if(user.role === 'admin') {
     //admin actions
     dispatch(loadProducts());
+    dispatch(loadPromos());
   } else {
     //dist actions
     console.log('it works?');

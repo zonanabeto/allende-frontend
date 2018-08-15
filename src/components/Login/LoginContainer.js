@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import {LoginForm} from "./LoginForm";
 import './LoginContainer.css';
 import {logIn} from "../../services/authServices";
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as productsActions from '../../redux/actions/productsActions';
 import toastr from 'toastr';
 
 class LoginContainer extends Component{
@@ -64,10 +61,4 @@ class LoginContainer extends Component{
   }
 }
 
-function mapDispatchToProps(dispatch){
-  return {
-    actions: bindActionCreators(productsActions, dispatch)
-  }
-}
-
-export default connect(null, mapDispatchToProps)(LoginContainer);
+export default LoginContainer;

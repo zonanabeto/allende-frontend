@@ -30,7 +30,7 @@ class AdminProducts extends React.Component{
     ],
   };
 
-  showModal = (obj) => {
+  showModal = () => {
     this.setState({visible: true});
   };
 
@@ -50,8 +50,9 @@ class AdminProducts extends React.Component{
 
   render(){
     const {visible, columns} = this.state;
-    const {products} = this.props;
-    console.log(products)
+    const {products, fetched} = this.props;
+    if(!fetched)return <p>loading...</p>
+    console.log(this.state);
     return(
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow: '1' }}>
         <Card title="Productos" style={{margin:'20px', width: '80%'}}>
@@ -71,16 +72,13 @@ class AdminProducts extends React.Component{
   }
 }
 
-function mapStateToProps(state, ownProps){
-  return {
-    products: state.products
-  }
-}
+const mapStateToProps = (state, ownProps) => ({
+  products: state.products,
+  fetched:state.products!==undefined
+});
 
-function mapDispatchToProps(dispatch){
-  return {
-    actions: bindActionCreators(productsActions, dispatch)
-  }
-}
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(productsActions, dispatch)
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(AdminProducts);
