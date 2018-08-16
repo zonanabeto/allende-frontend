@@ -1,21 +1,18 @@
-import * as distServices from "../../services/distServices";
-import {createAction} from 'redux-actions'
-import {DEL_DIST, GET_DISTS, NEW_DIST, UPDATE_DIST} from "./actionTypes";
+import {getDists} from "../../services/distServices";
+import * as types from './actionTypes';
 
 
 //thunk Load Distributors
-export const loadDists = () => (dispatch) => {
-    distServices.getDists()
-        .then(distribuidores=>{
-            console.log(distribuidores);
-            dispatch(distribuidores);
+//action
+function getDisrtribuidoresSuccess(distri){
+    return {type: types.GET_DISTS, distri}
+}
+
+//thunk
+export const getDistri = () => (dispatch) => {
+    getDists()
+        .then(distri=>{
+            dispatch(getDisrtribuidoresSuccess(distri));
         })
         .catch(e => console.log(e))
 };
-
-//action Get Distributors
-export const getDists = createAction(GET_DISTS, loadDists());
-export const newDist = createAction(NEW_DIST);
-export const updateDist = createAction(UPDATE_DIST);
-export const delDist = createAction(DEL_DIST);
-

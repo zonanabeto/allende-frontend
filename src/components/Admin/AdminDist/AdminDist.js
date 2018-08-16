@@ -1,15 +1,13 @@
+/* BlisS was here */
+
 import React, { Component } from 'react';
 import { Card, Button , message } from 'antd';
-import reqwest from 'reqwest';
 import {connect} from 'react-redux'
 import Buscador from './Buscador';
 import {ListaDist} from './ListaDist';
 import {Link} from 'react-router-dom'
-import {getDists} from "../../../redux/actions/distActions";
+import {getDistri} from "../../../redux/actions/distActions";
 
-
-
-const fakeDataUrl = 'http://localhost:3000/user';
 
 class AdminDist extends Component {
 
@@ -20,30 +18,12 @@ class AdminDist extends Component {
     busqueda:''
   };
 
-  getData = (callback) => {
-    reqwest({
-      url: fakeDataUrl,
-      type: 'json',
-      method: 'get',
-      contentType: 'application/json',
-      success: (res) => {
-        callback(res);
-      },
-    });   
-  };
-
   componentWillMount() {
-    this.props.getDists();
-    this.getData((res) => {
-      this.setState({
-        data: res,
-      });
-    });
-
+    this.props.getDistri();
   };
 
   handleInfiniteOnLoad = () => {
-    let data = this.state.data;
+    let data = this.props.distribuidores;
     this.setState({
       loading: true,
     });
@@ -55,13 +35,13 @@ class AdminDist extends Component {
       });
       return;
     }
-    this.getData((res) => {
-      data = data.concat(res);
-      this.setState({
-        data,
-        loading: false,
-      });
-    });
+    // this.getData((res) => {
+    //   data = data.concat(res);
+    //   this.setState({
+    //     data,
+    //     loading: false,
+    //   });
+    // });
   };
 
   buscar=(informacion)=>{
@@ -70,9 +50,11 @@ class AdminDist extends Component {
 
 
   render() {
-    let {data, busqueda} = this.state
+
+    let {busqueda} = this.state;
+    let data = this.props.distribuidores;
     let regEx = new RegExp(busqueda, 'i')
-    data = data.filter(i=> regEx.exec(i.razonSocial) || regEx.exec(i.nombreContacto))
+    data = data.filter(i=> regEx.exec(i.razonSocial) || regEx.exec(i.username))
     return (
       <div style={{ flexWrap:'wrap', display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow:'1', flexDirection: 'column' }}>
       <Card title="Lista de Distribuidores" style={{margin:'20px', width: '80%' }}>
@@ -90,4 +72,11 @@ class AdminDist extends Component {
   }
 }
 
-export default connect(null,{getDists})(AdminDist);
+function mapStateToProps(state){
+  console.log(state)
+  return {
+    distribuidores: state.distribuidores
+  }
+}
+
+export default connect(mapStateToProps,{getDistri})(AdminDist);

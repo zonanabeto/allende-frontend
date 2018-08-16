@@ -4,9 +4,10 @@ import InfiniteScroll from 'react-infinite-scroller';
 import { showDeleteConfirm } from './DistModals';
 
 
-export const ListaDist = ({handleInfiniteOnLoad, loading,hasMore,data, lista}) => {  
+export const ListaDist = ({handleInfiniteOnLoad, loading,hasMore, lista}) => {  
 /* 
     if(this.state.data===undefined)return<Spin size="large" /> */
+    
     return (
       <div className="lista-proveedores">
         <InfiniteScroll
@@ -23,7 +24,7 @@ export const ListaDist = ({handleInfiniteOnLoad, loading,hasMore,data, lista}) =
                 <List.Item.Meta
                   avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
                   title={<a href="/">{item.razonSocial}</a>}
-                  description={item.nombreContacto}
+                  description={item.username}
                 />
                 <div>   
                   <Icon className='iconDist' type="edit" /> <span> | </span>
