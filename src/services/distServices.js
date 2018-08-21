@@ -5,8 +5,8 @@ export const getDists = () => {
         .then(r => r.json())
 };
 
-export const newDist =(url,obj)=> () =>
-fetch(apiUrl + '/new-dist',{
+export const newDist =(obj)=> () =>
+fetch(apiUrl + '/signup',{
   method:'POST',
   body:JSON.stringify(obj),
   headers: new Headers({'Content-type':'application/json'})

@@ -1,5 +1,6 @@
 import React from 'react';
 import { List, Avatar, Spin, Icon} from 'antd';
+import {Link} from 'react-router-dom';
 import InfiniteScroll from 'react-infinite-scroller';
 import { showDeleteConfirm } from './DistModals';
 
@@ -23,7 +24,8 @@ export const ListaDist = ({handleInfiniteOnLoad, loading,hasMore, lista}) => {
               <List.Item key={item.id}>
                 <List.Item.Meta
                   avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                  title={<a href="/">{item.razonSocial}</a>}
+                  title={<Link to={`/admin/dist/${item._id}`}>
+               <span>{item.razonSocial}</span> </Link>}
                   description={item.contactName}
                 />
                 <div>

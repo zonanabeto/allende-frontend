@@ -1,5 +1,4 @@
 /* BlisS was here */
-
 import React, { Component } from 'react';
 import { Card, Button , message } from 'antd';
 import {connect} from 'react-redux'
@@ -73,7 +72,6 @@ class AdminDist extends Component {
 }
 
 function mapStateToProps(state){
-  console.log(state)
   return {
     distribuidores: state.distribuidores
   }

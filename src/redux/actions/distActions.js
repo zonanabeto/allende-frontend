@@ -10,12 +10,16 @@ const getDisrtribuidoresSuccess=(distri)=>{
 
 //thunk
 export const getDistri = () => (dispatch) => {
+
     getDists()
         .then(distri=>{
+            console.log(distri);
             dispatch(getDisrtribuidoresSuccess(distri));
         })
         .catch(e => console.log(e))
 };
+
+
 
 const addDistSuccess=(distribuidor)=>{
     return {type:types.NEW_DIST_SUCCESS,distribuidor}

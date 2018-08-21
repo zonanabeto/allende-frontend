@@ -7,7 +7,8 @@ import AdminPedidos from '../AdminPedidos/AdminPedidos';
 import AdminProducts from "../AdminProducts/Products/AdminProducts";
 import NewDist from "../AdminDist/NewDist";
 import AdminPromos from "../AdminProducts/Promos/AdminPromos";
-
+import ViewDist from '../AdminDist/ViewDist';
+ 
 class AdminRoutes extends Component{
 
   render(){
@@ -21,6 +22,7 @@ class AdminRoutes extends Component{
         <Route exact path='/admin/dashboard' component={AdminDashboard} />
         <Route exact path='/admin/products' component={AdminProducts} />
         <Route exact path='/admin/promos' component={AdminPromos} />
+        <Route exact path='/admin/dist/:id' component={ViewDist} />
       </Switch>
     )
   }
