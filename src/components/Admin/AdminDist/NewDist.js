@@ -1,9 +1,12 @@
 import React from 'react';
+import {connect} from 'react-redux'
 import {Form, Input, Tooltip, Icon,  Button, AutoComplete, Card} from 'antd';
+import {addDistri} from "../../../redux/actions/distActions";
+
+
 const { TextArea } = Input;
 const FormItem = Form.Item;
 const AutoCompleteOption = AutoComplete.Option;
-
 
 
 class RegistrationForm extends React.Component {
@@ -14,6 +17,7 @@ class RegistrationForm extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        this.props.addDistri(e)
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
@@ -203,4 +207,4 @@ const WrappedRegistrationForm = Form.create()(RegistrationForm);
 
 const NewDist=WrappedRegistrationForm;
 
-export default NewDist;
+export default connect(null,{addDistri})(NewDist);

@@ -24,9 +24,10 @@ export const ListaDist = ({handleInfiniteOnLoad, loading,hasMore, lista}) => {
                 <List.Item.Meta
                   avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
                   title={<a href="/">{item.razonSocial}</a>}
-                  description={item.username}
+                  description={item.contactName}
                 />
-                <div>   
+                <div>
+                  <span> {item.active?'inactivo':'activo'} </span>   
                   <Icon className='iconDist' type="edit" /> <span> | </span>
                   <Icon onClick={showDeleteConfirm} type="delete" />
                 </div>
