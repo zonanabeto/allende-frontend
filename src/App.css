@@ -68,3 +68,8 @@
 .iconDist :hover {
   color: #40a9ff
 }
+
+.liDistView{
+  margin:10px;
+  border-bottom: 2px rgb(232, 232, 232) solid;
+}

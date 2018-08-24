@@ -13,7 +13,6 @@ export const getDistri = () => (dispatch) => {
 
     getDists()
         .then(distri=>{
-            console.log(distri);
             dispatch(getDisrtribuidoresSuccess(distri));
         })
         .catch(e => console.log(e))
